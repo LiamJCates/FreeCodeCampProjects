@@ -1,138 +1,192 @@
 html,
 body {
   margin: 0;
-  min-width: 290px;
-  color: #4d4e53;
-  background-color: #ffffff;
-  font-family: "Open Sans", Arial, sans-serif;
-  line-height: 1.5;
+  top:0;
+  left: 0;
+  font-family: Lato;
 }
 
-#navbar {
+br{
+  font-size: 0px;
+}
+/* TopBar */
+#main-top{
+  width: 100%;
+
   position: fixed;
-  min-width: 290px;
+  top: 0;
+  left: 0;
+
+  background-color: #1f2833;
+  border-bottom: 2px solid #45A29E;
+  z-index: 1;
+}
+
+#main-top>h1{
+  margin: 0;
+  padding: 3px;
+  font-size: 32px;
+  color: #66fcf1;
+}
+
+#main-top>span{
+  float: left;
+  margin-right: 10px;
+  padding: 0 10px 3px 10px;
+  font-size: 32px;
+  cursor:pointer;
+  color: #66fcf1;
+}
+
+#main-top>span:hover{
+  background-color: #66fcf1;
+  color: #1f2833;
+}
+
+
+/*  SlideOut navbar */
+#nav-panel{
+  z-index: 1;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+#navbar {
+
+  position: fixed;
   top: 0px;
   left: 0px;
-  width: 300px;
+
+  width: 350px;
   height: 100%;
-  border-right: 2px solid red;
+
+  border-right: 2px solid #c5c6c7;
+  background-color: #1f2833;
+
+  z-index: 2;
+
+
+white-space:nowrap
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
-header {
-  color: white;
-  margin: 10px;
+/* Navbar top */
+#nav-top{
+  display: flex;
   text-align: center;
-  font-size: 1.8em;
-  font-weight: thin;
+  border-bottom: 2px solid #c5c6c7;
+  height: 46px;
 }
 
+#nav-top>header{
+  width: 100%;
 
+  margin: 0;
 
-#main-doc header {
-  text-align: left;
-  margin: 0px;
-
+  color: #66fcf1;
+  font-size: 34px;
 }
 
-#navbar{
-  background-color: #14141f;
+#nav-top>span{
+  float: right;
+  padding: 0 14px 3px 14px;
+  font-size: 32px;
+  cursor:pointer;
+  color: #66fcf1;
 }
 
+#nav-top>span:hover{
+  background-color: #45A29E;
+  color: #1f2833;
+}
+
+/* Navbar content */
 #navbar ul {
   height: 88%;
   padding: 0;
+  margin: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  border-top: 1px solid;
+
 
 }
 
 #navbar li {
-  color: #4d4e53;
-  border-bottom: 1px solid;
+  background-color: #66fcf1;
+  border-bottom: 1px solid #c5c6c7;
   list-style: none;
   position: relative;
   width: 100%;
+  cursor:pointer;
+}
+
+#navbar li:hover {
+  background-color: #45A29E;
+
 }
 
 #navbar a {
   display: block;
   padding: 10px 30px;
-  color: #4d4e53;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-#main-doc {
-  position: absolute;
-  margin-left: 302px;
-  padding: 20px;
-  margin-bottom: 110px;
-  background-color: #14141f;
+#navbar a:hover{
+  color: #F0F0F0;
+}
+/* Main Content*/
+
+#main-doc{
+  padding: 15px;
+  background-color: #0B0C10;
+}
+
+header{
+  color: #66fcf1;
+  font-size: 28px;
+  margin: 10px 0 40px 0;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+section span {
+  font-size: 10px;
+  display: block;
 }
 
 section article {
-  color: #4d4e53;
+  color: #F0F0F0;
   margin: 15px;
   font-size: 0.96em;
 }
 
 section li {
-  margin: 15px 0px 0px 20px;
+  margin: 15px 0px 0px 10px;
 }
 
 code {
   display: block;
   text-align: left;
-  white-space: pre;
   position: relative;
-  word-break: normal;
-  word-wrap: normal;
+  word-break: break-all;
+  word-wrap: break-word;
   line-height: 2;
-  background-color: #f7f7f7;
+  color: #0B0C10;
+  background-color: #c5c6c7;
   padding: 15px;
-  margin: 10px;
+  margin: 30px auto;
+  width: 70%;
   border-radius: 5px;
-}
-
-@media only screen and (max-width: 815px) {
-  /* For mobile phones: */
-  #navbar ul {
-    border: 1px solid;
-    height: 207px;
-  }
-
-  #navbar {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-height: 275px;
-    border: none;
-    z-index: 1;
-    border-bottom: 2px solid;
-  }
-
-  #main-doc {
-    position: relative;
-    margin-left: 0px;
-    margin-top: 270px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  #main-doc {
-    margin-left: -10px;
-  }
-
-  code {
-    margin-left: -20px;
-    width: 100%;
-    padding: 15px;
-    padding-left: 10px;
-    padding-right: 45px;
-    min-width: 233px;
-  }
 }
