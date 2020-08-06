@@ -363,6 +363,7 @@ a{
 }
 
 .portfolio-item:hover:after{
+  transition: .8s;
   border: 2px solid #FFF;
 }
 .portfolio-item-content{
@@ -419,7 +420,6 @@ a{
   list-style:none;
   margin: 50px 100px;
 
-  border-radius: 50%;
 }
 
 #contact>ul li img {
@@ -432,21 +432,41 @@ a{
 #contact-one, #contact-two, #contact-three{
   display: none;
   position: absolute;
-  width: 130px;
-  height: 130px;
-    margin: 10px 0 0 10px;
-
+  width: 148px;
+  height: 148px;
+  margin: 2px 0 0 1px;
+  border: 1px solid black;
   border-radius: 50%;
 
 
-  background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 0,#fcb712 calc(2/18 * 100%),#f7921e 0,#f7921e calc(3/18 *100%),#e87f24 0,#e87f24 calc(4/18 * 100%),#dd6227 0,#dd6227 calc(5/18 *100%),#dc4c27 0,#dc4c27 calc(6/18 * 100%),#ca3435 0,#ca3435 calc(7/18 *100%),#b82841 0,#b82841 calc(8/18 * 100%),#953751 0,#953751 calc(9/18 * 100%),#364c88 0,#364c88 calc(10/18 * 100%),#16599d 0,#16599d calc(11/18 * 100%),#02609e 0,#02609e calc(12/18 * 100%),#0073a9 0,#0073a9 calc(13/18 * 100%),#008aa4 0,#008aa4 calc(14/18 * 100%),#239a87 0,#239a87 calc(15/18 * 100%),#7cba6d 0,#7cba6d calc(16/18 * 100%),#becc2f 0,#becc2f calc(17/18 * 100%),#e0d81d 0,#e0d81d 100%);
+background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 calc(2/18 * 100%),#f7921e calc(3/18 *100%),#e87f24 calc(4/18 * 100%),#dd6227 calc(5/18 *100%),#dc4c27 calc(6/18 * 100%),#ca3435 calc(7/18 *100%),#b82841 calc(8/18 * 100%),#953751 calc(9/18 * 100%),#364c88 calc(10/18 * 100%),#16599d calc(11/18 * 100%),#02609e calc(12/18 * 100%),#0073a9 calc(13/18 * 100%),#008aa4 calc(14/18 * 100%),#239a87 calc(15/18 * 100%),#7cba6d calc(16/18 * 100%),#becc2f calc(17/18 * 100%),#e0d81d 100%);
 
-  -webkit-animation: neon-glow 3s infinite, rotate 1s linear infinite;
-  -moz-animation: neon-glow 3s infinite, rotate 1s linear infinite;
-  -o-animation: neon-glow 3s infinite, rotate 1s linear infinite;
-  animation: neon-glow 3s infinite, rotate 2s linear infinite;
+  -webkit-animation: hue-rotate 1s linear infinite;
+  -moz-animation: hue-rotate 1s linear infinite;
+  -o-animation: hue-rotate 1s linear infinite;
+  animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
+/*
+  -webkit-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
+  -moz-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
+  -o-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
+  animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
+  */
 }
 
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
 
 @-webkit-keyframes rotate {
   0% {transform:rotate(0deg);}
