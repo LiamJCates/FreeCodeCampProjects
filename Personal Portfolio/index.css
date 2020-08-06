@@ -130,15 +130,9 @@ a{
 /* TODO: make cross browser*/
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .hero
@@ -210,8 +204,9 @@ a{
 }
 
 @media screen and (max-width: 400px) {
-  .first{font-size: 1em;}
-  .last{font-size: 2em;}
+  .first{font-size: 3.2em;}
+  .last{font-size: 4em;}
+  #messenger { font-size: 14px; }
 }
 
 /* Mouse scroll indication*/
@@ -347,13 +342,14 @@ a{
 }
 
 
-#algorithms::before{
-  background-image: url(images/algorithms-background.jpg);
-}
-
-#data-structures::before{
-  background-image: url(images/data-structures-background.jpg);
-}
+#algorithms::before{ background-image: url(images/algorithms-background.jpg); }
+#data-structures::before{ background-image: url(images/data-structures-background.jpg); }
+#programming-notes::before{ background-image: url(images/programming-notes-background.jpg); }
+#system-design::before{ background-image: url(images/system-design-background.jpg); }
+#java::before{ background-image: url(images/java-background.jpg); }
+#python::before{ background-image: url(images/python-background.jpg); }
+#javascript::before{ background-image: url(images/javascript-background3.png); }
+#web-dev::before{ background-image: url(images/web-dev-background.png); }
 
 @media screen and (max-width: 1200px) {
   .portfolio-item{flex: 50%;}
@@ -413,15 +409,21 @@ a{
 /* Contact */
 
 #contact{
+  width: 100%;
+  height: 97vh;
   background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 #contact>p{
   position: absolute;
-  top: 210%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  margin-bottom: 200px;
   opacity: 0;
+  color: white;
+  font-size: 20px;
 }
 
 #msg1{
@@ -475,12 +477,12 @@ a{
 
 
 #contact>ul {
+  position: absolute;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 97vh;
   z-index: 10;
 
 }
