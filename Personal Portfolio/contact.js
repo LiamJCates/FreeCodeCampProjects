@@ -206,6 +206,8 @@ requestID = window.requestAnimationFrame(animate);
 
 function clickCanvas() {
 startOver();
+document.getElementById("msg1").style.display = "none";
+document.getElementById("msg2").style.display = "none";
 }
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
@@ -221,4 +223,4 @@ ctx = canv.getContext('2d');
 } // canvas creation
 
 window.addEventListener('resize',startOver);
-window.addEventListener('click',startOver);
+document.getElementById("contact").addEventListener('click',clickCanvas);

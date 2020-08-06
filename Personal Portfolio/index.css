@@ -397,13 +397,72 @@ a{
 #contact{
   background-color: #222;
 }
+#contact>p{
+  position: absolute;
+  top: 220%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+}
+
+#msg1{
+  -webkit-animation: 8s ease infinite appearmsg1;
+  -moz-animation: 8s ease infinite appearmsg1;
+  -o-animation: 8s ease infinite appearmsg1;
+  animation: 8s ease infinite appearmsg1;
+}
+@-webkit-keyframes appearmsg1 {
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@-moz-keyframes appearmsg1 {
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@-o-keyframes appearmsg1 {
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes appearmsg1 {
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+}
+#msg2{
+  -webkit-animation: 8s ease infinite appearmsg2;
+  -moz-animation: 8s ease infinite appearmsg2;
+  -o-animation: 8s ease infinite appearmsg2;
+  animation: 8s ease infinite appearmsg2;
+}
+@-webkit-keyframes appearmsg2 {
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes appearmsg2 {
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes appearmsg2 {
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes appearmsg2 {
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
 #contact>ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 95vh;
+  height: 97vh;
   z-index: 10;
 
 }
@@ -441,16 +500,10 @@ a{
 
 background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 calc(2/18 * 100%),#f7921e calc(3/18 *100%),#e87f24 calc(4/18 * 100%),#dd6227 calc(5/18 *100%),#dc4c27 calc(6/18 * 100%),#ca3435 calc(7/18 *100%),#b82841 calc(8/18 * 100%),#953751 calc(9/18 * 100%),#364c88 calc(10/18 * 100%),#16599d calc(11/18 * 100%),#02609e calc(12/18 * 100%),#0073a9 calc(13/18 * 100%),#008aa4 calc(14/18 * 100%),#239a87 calc(15/18 * 100%),#7cba6d calc(16/18 * 100%),#becc2f calc(17/18 * 100%),#e0d81d 100%);
 
-  -webkit-animation: hue-rotate 1s linear infinite;
-  -moz-animation: hue-rotate 1s linear infinite;
-  -o-animation: hue-rotate 1s linear infinite;
+  -webkit-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
+  -moz-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
+  -o-animation: rotate 30s linear infinite, rotate 30s linear infinite,hue-rotate 1s linear infinite;
   animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
-/*
-  -webkit-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
-  -moz-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
-  -o-animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
-  animation: neon-glow 3s infinite, hue-rotate 3s linear infinite;
-  */
 }
 
 @keyframes hue-rotate {
@@ -488,47 +541,21 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
   100% {transform:rotate(360deg);}
 }
 
-@-webkit-keyframes neon-glow {
-  0% { filter: blur(10px); }
-  50% { filter: blur(50px); }
-  100% { filter: blur(10px); }
-}
-
-@-moz-keyframes neon-glow {
-  0% { filter: blur(10px); }
-  50% { filter: blur(50px); }
-  100% { filter: blur(10px); }
-}
-
-@-o-keyframes neon-glow {
-  0% { filter: blur(10px); }
-  50% { filter: blur(50px); }
-  100% { filter: blur(10px); }
-}
-
-@keyframes neon-glow {
-  0% { filter: blur(10px); }
-  50% { filter: blur(30px); }
-  100% { filter: blur(10px); }
-}
-
 /* Footer */
 
 footer{
   position: absolute;
   width: 100%;
-  height: 5vh;
+  height: 3vh;
   background-color: black;
 
   z-index: 10;
-  display: flex;
-  justify-content: space-evenly;
 
 }
 
 footer p{
-  margin: 15px;
-  color:white;
+  margin: 3px 15px;
+  color: white;
 }
 
 footer a{
