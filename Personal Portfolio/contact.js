@@ -220,8 +220,6 @@ canv.style.position = "absolute";
 canv.addEventListener('click',clickCanvas);
 document.getElementById("contact").insertAdjacentElement('afterbegin', canv)
 ctx = canv.getContext('2d');
-
 } // canvas creation
-
 
 document.getElementById("contact").addEventListener('click',clickCanvas);
