@@ -33,8 +33,8 @@ a{
 
   display: flex;
   justify-content: flex-end;
-  background: #000;
-
+  background-color: rgba(255, 255, 255, .2);
+  border: 1px solid black;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
   z-index: 10;
 
@@ -46,70 +46,26 @@ a{
 }
 
 .block-menu li a {
-  color: #fff;
+  color: white;
   display: block;
   text-decoration: none;
   font-family: 'Passion One', Arial, sans-serif;
   font-smoothing: antialiased;
   text-transform: uppercase;
-  overflow: visible;
   line-height: 20px;
   font-size: 24px;
+  font-weight: bolder;
   padding: 15px 10px;
+  text-shadow: 1px 1px 1px black;
 
 }
 
-/* animation domination */
-.three-d {
-  perspective: 200px;
-  transition: all .07s linear;
-  position: relative;
-  cursor: pointer;
+.block-menu li a:hover {
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  transition: 0.25s;
 
 }
-
-.three-d:hover .three-d-box,
-.three-d:focus .three-d-box {
-  transform: translateZ(-25px) rotateX(90deg);
-
-}
-
-.three-d-box {
-  transition: all .3s ease-out;
-  transform: translatez(-25px);
-  transform-style: preserve-3d;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.front {
-  transform: rotatex(0deg) translatez(25px);
-}
-
-.back {
-  transform: rotatex(-90deg) translatez(25px);
-  color: #ffe7c4;
-}
-
-.front, .back {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  padding: 15px 10px;
-  color: white;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-
 
 /* Welcome Section */
 #welcome-section {
@@ -308,9 +264,11 @@ a{
 .projects-section-header{
   margin: 150px 0 30px 0;
   color: white;
+  font-size: 30px;
 }
 
 .project-items{
+  margin: 150px 0px 0px 0px;
   position: relative;
   display: flex;
   flex-flow: wrap;
@@ -323,8 +281,9 @@ a{
   padding: 20px;
   flex: 25%;
   flex-grow: 0;
-  border: 10px solid transparent;
+  border: 20px solid transparent;
   border-radius: 2%;
+  background-color: transparent;
 }
 
 .portfolio-item::before{
@@ -335,21 +294,88 @@ a{
   width: 100%;
   height: 100%;
 
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 2%;
 }
 
+#algorithms:hover:before{
+  background-image: url(images/algorithms-background.jpg);
+  -webkit-animation:  .5s linear visible;
+  -moz-animation:  .5s linear visible;
+  -o-animation:  .5s linear visible;
+  animation: .5s linear visible;
+}
+#data-structures:hover:before{
+  background-image: url(images/data-structures-background.jpg);
+  -webkit-animation:  .5s linear visible;
+  -moz-animation:  .5s linear visible;
+  -o-animation:  .5s linear visible;
+  animation: .5s linear visible;
+}
+#programming-notes:hover:before{
+  background-image: url(images/programming-notes-background.jpg);
+  -webkit-animation:  .5s linear visible;
+  -moz-animation:  .5s linear visible;
+  -o-animation:  .5s linear visible;
+  animation: .5s linear visible;
+}
+#system-design:hover:before{
+  background-image: url(images/system-design-background.jpg);
+-webkit-animation:  .5s linear visible;
+-moz-animation:  .5s linear visible;
+-o-animation:  .5s linear visible;
+animation: .5s linear visible;
+}
+#java:hover:before{
+  background-image: url(images/java-background.jpg);
+-webkit-animation:  .5s linear visible;
+-moz-animation:  .5s linear visible;
+-o-animation:  .5s linear visible;
+animation: .5s linear visible;
+}
+#python:hover:before{
+  background-image: url(images/python-background.jpg);
+-webkit-animation:  .5s linear visible;
+-moz-animation:  .5s linear visible;
+-o-animation:  .5s linear visible;
+animation: .5s linear visible;
+}
+#javascript:hover:before{
+  background-image: url(images/javascript-background3.png);
+-webkit-animation:  .5s linear visible;
+-moz-animation:  .5s linear visible;
+-o-animation:  .5s linear visible;
+animation: .5s linear visible;
+}
+#web-dev:hover:before{
+  background-image: url(images/web-dev-background.png);
+-webkit-animation:  .5s linear visible;
+-moz-animation:  .5s linear visible;
+-o-animation:  .5s linear visible;
+animation: .5s linear visible;
+}
 
-#algorithms::before{ background-image: url(images/algorithms-background.jpg); }
-#data-structures::before{ background-image: url(images/data-structures-background.jpg); }
-#programming-notes::before{ background-image: url(images/programming-notes-background.jpg); }
-#system-design::before{ background-image: url(images/system-design-background.jpg); }
-#java::before{ background-image: url(images/java-background.jpg); }
-#python::before{ background-image: url(images/python-background.jpg); }
-#javascript::before{ background-image: url(images/javascript-background3.png); }
-#web-dev::before{ background-image: url(images/web-dev-background.png); }
+
+@-webkit-keyframes visible {
+  0% {opacity: 0;}
+  100% { opacity: 1; }
+}
+@-moz-keyframes  visible {
+  0% {opacity: 0;}
+  100% { opacity: 1; }
+}
+@-o-keyframes  visible {
+  0% {opacity: 0;}
+  100% { opacity: 1; }
+}
+@keyframes  visible {
+  0% {opacity: 0;}
+  100% { opacity: 1; }
+}
+
 
 @media screen and (max-width: 1200px) {
   .portfolio-item{flex: 50%;}
@@ -360,8 +386,7 @@ a{
 }
 
 .portfolio-item:hover:before{
-  transition: .5s;
-  filter: brightness(40%) blur(1px);
+
 }
 
 .portfolio-item::after{
@@ -372,7 +397,7 @@ a{
 
   width: 100%;
   height: 100%;
-  border: 2px solid #555;
+
   border-radius: 2%;
 }
 
@@ -394,7 +419,7 @@ a{
   max-width: 130px;
   height: auto;
   margin-bottom: 20px;
-  filter: invert(100%) drop-shadow(0px 0px 10px #000)  drop-shadow(0px 0px 2px #FFF) ;
+  filter: invert(100%) drop-shadow(1px 1px 1px #000) ;
 }
 
 .portfolio-text{
@@ -402,7 +427,7 @@ a{
   text-decoration: none;
   font-weight: bolder;
   color: white;
-  text-shadow: 0px 0px 2px white, 0px 0px 5px grey;
+  text-shadow: 2px 2px 2px black, 0px 0px 3px rgba(255, 255, 255, 1);
 }
 
 
@@ -420,17 +445,17 @@ a{
 
 #contact>p{
   position: absolute;
-  margin-bottom: 200px;
   opacity: 0;
   color: white;
   font-size: 20px;
 }
 
 #msg1{
-  -webkit-animation: 8s ease infinite appearmsg1;
-  -moz-animation: 8s ease infinite appearmsg1;
-  -o-animation: 8s ease infinite appearmsg1;
-  animation: 8s ease infinite appearmsg1;
+  margin-bottom: 250px;
+  -webkit-animation: 6s ease infinite appearmsg1;
+  -moz-animation: 6s ease infinite appearmsg1;
+  -o-animation: 6s ease infinite appearmsg1;
+  animation: 6s ease infinite appearmsg1;
 }
 @-webkit-keyframes appearmsg1 {
   25% { opacity: 1; }
@@ -449,30 +474,27 @@ a{
   50% { opacity: 0; }
 }
 #msg2{
-  -webkit-animation: 8s ease infinite appearmsg2;
-  -moz-animation: 8s ease infinite appearmsg2;
-  -o-animation: 8s ease infinite appearmsg2;
-  animation: 8s ease infinite appearmsg2;
+  margin-top: 250px;
+  -webkit-animation: 6s ease infinite appearmsg2;
+  -moz-animation: 6s ease infinite appearmsg2;
+  -o-animation: 6s ease infinite appearmsg2;
+  animation: 6s ease infinite appearmsg2;
 }
 @-webkit-keyframes appearmsg2 {
-  50% { opacity: 0; }
-  75% { opacity: 1; }
-  100% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
 }
 @-moz-keyframes appearmsg2 {
-  50% { opacity: 0; }
-  75% { opacity: 1; }
-  100% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
 }
 @-o-keyframes appearmsg2 {
-  50% { opacity: 0; }
-  75% { opacity: 1; }
-  100% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
 }
 @keyframes appearmsg2 {
   50% { opacity: 0; }
   75% { opacity: 1; }
-  100% { opacity: 0; }
 }
 
 
