@@ -62,3 +62,14 @@ function moveObject(event) {
         behavior: 'smooth'
     });
 }
+
+function closeNav(){
+  document.getElementById('settings').style.display='none';
+  document.getElementById('close').style.display='none';
+  document.getElementById('open').style.display='block';
+}
+function openNav(){
+  document.getElementById('settings').style.display='block';
+  document.getElementById('open').style.display='none';
+  document.getElementById('close').style.display='block';
+}

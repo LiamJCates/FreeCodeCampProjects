@@ -11,9 +11,47 @@
 
 
 
-const nbEddies = 2;
-const nbParticles = 1000; // number of particlez
-const lifeTime = 100; // average lifetime of particlez
+
+var nbEddies = 2;
+var nbParticles = 1000; // number of particlez
+var lifeTime = 100; // average lifetime of particlez
+
+/* foci slider */
+var foci_slider = document.getElementById("foci-range");
+var foci_output = document.getElementById("foci");
+foci_output.innerHTML = foci_slider.value;
+
+foci_slider.oninput = function() {
+  foci_output.innerHTML = this.value;
+  nbEddies = this.value;
+}
+
+/* particles slider */
+var particles_slider = document.getElementById("particles-range");
+var particles_output = document.getElementById("particles");
+particles_output.innerHTML = particles_slider.value;
+
+particles_slider.oninput = function() {
+  particles_output.innerHTML = this.value;
+  nbParticles = this.value;
+}
+
+/* lifetime slider */
+var lifetime_slider = document.getElementById("lifetime-range");
+var lifetime_output = document.getElementById("lifetime");
+lifetime_output.innerHTML = lifetime_slider.value;
+
+lifetime_slider.oninput = function() {
+  lifetime_output.innerHTML = this.value;
+  lifeTime = this.value;
+}
+
+function sliderUpdate(){
+  foci_output.innerHTML = nbEddies;
+  particles_output.innerHTML = nbParticles;
+  lifetime_output.innerHTML = lifeTime;
+}
+sliderUpdate();
 
 let canv, ctx;   // canvas and drawing context
 let maxx, maxy;  // size of client Window
