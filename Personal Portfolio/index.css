@@ -34,7 +34,7 @@ a{
 
 /* Header */
 
-.block-menu {
+#navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -183,10 +183,10 @@ a{
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  -webkit-animation: 3s ease infinite appear;
-  -moz-animation: 3s ease infinite appear;
-  -o-animation: 3s ease infinite appear;
-  animation: 3s ease infinite appear;
+  -webkit-animation: 6s ease infinite appear;
+  -moz-animation: 6s ease infinite appear;
+  -o-animation: 6s ease infinite appear;
+  animation: 6s ease infinite appear;
 }
 
 .mouse-icon{
@@ -208,50 +208,66 @@ a{
   background-color: white;
   border-radius: 50%;
   opacity: 0;
-  -webkit-animation: 3s ease infinite wheel-up-down;
-  -moz-animation: 3s ease infinite wheel-up-down;
-  -o-animation: 3s ease infinite wheel-up-down;
-  animation: 3s ease infinite wheel-up-down;
+  -webkit-animation: 6s ease infinite wheel-up-down;
+  -moz-animation: 6s ease infinite wheel-up-down;
+  -o-animation: 6s ease infinite wheel-up-down;
+  animation: 6s ease infinite wheel-up-down;
 }
 
 .scroll{
   position: absolute;
   margin-left: 11px;
-  top: 110%;
+  top: 120%;
   font-size: 16px;
   transform: translate(-50%, -50%);
   opacity: 0;
-  -webkit-animation: 3s ease infinite wheel-up-down;
-  -moz-animation: 3s ease infinite wheel-up-down;
-  -o-animation: 3s ease infinite wheel-up-down;
-  animation: 3s ease infinite wheel-up-down;
+  -webkit-animation: 6s ease infinite appear;
+  -moz-animation: 6s ease infinite appear;
+  -o-animation: 6s ease infinite appear;
+  animation: 6s ease infinite appear;
 }
 
 @-webkit-keyframes wheel-up-down {
   0% { margin-top: 2px; }
   30% { opacity: 1; }
+  70% { opacity: 0; }
   100% { margin-top: 20px;}
 }
 @-moz-keyframes wheel-up-down {
   0% { margin-top: 2px; }
   30% { opacity: 1; }
+  70% { opacity: 0; }
   100% { margin-top: 20px;}
 }
 @-o-keyframes wheel-up-down {
   0% { margin-top: 2px; }
   30% { opacity: 1; }
+  70% { opacity: 0; }
   100% { margin-top: 20px;}
 }
 @keyframes wheel-up-down {
   0% { margin-top: 2px; }
   30% { opacity: 1; }
+  70% { opacity: 0; }
   100% { margin-top: 20px;}
 }
 
-@-webkit-keyframes appear { 30% { opacity: 1; } }
-@-moz-keyframes  appear { 30% { opacity: 1; } }
-@-o-keyframes  appear { 30% { opacity: 1; } }
-@keyframes  appear { 30% { opacity: 1; } }
+@-webkit-keyframes appear {
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
+@-moz-keyframes appear {
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
+@-o-keyframes appear {
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
+@keyframes appear {
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
 
 /* Projects */
 #projects{
@@ -269,14 +285,82 @@ a{
   background-blend-mode: overlay;
 }
 
-
-.projects-section-header{
-  margin: 150px 0 30px 0;
-  color: white;
-  font-size: 30px;
+.arrow{
+  display:none;
 }
 
-.project-items{
+@media screen and (max-width: 1200px) {
+  .arrow{
+    color: white;
+    opacity: 0;
+    -webkit-animation: 6s ease infinite key-up-down;
+    -moz-animation: 6s ease infinite key-up-down;
+    -o-animation: 6s ease infinite key-up-down;
+    animation: 6s ease infinite key-up-down;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.arrow img{
+  display: block;
+    height: 50px;
+    width: 50px;
+
+  filter: invert(100%);
+}
+
+@-webkit-keyframes key-up-down {
+  0% {
+  margin-top: 102px;
+  margin-bottom: 20px;
+  }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% {
+  margin-top: 120px;
+  margin-bottom: 2px;
+  }
+}
+@-moz-keyframes key-up-down {
+  0% {
+  margin-top: 102px;
+  margin-bottom: 20px;
+  }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% {
+  margin-top: 120px;
+  margin-bottom: 2px;
+  }
+}
+@-o-keyframes key-up-down {
+  0% {
+  margin-top: 102px;
+  margin-bottom: 20px;
+  }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% {
+  margin-top: 120px;
+  margin-bottom: 2px;
+  }
+}
+@keyframes key-up-down {
+  0% {
+  margin-top: 102px;
+  margin-bottom: 20px;
+  }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% {
+  margin-top: 120px;
+  margin-bottom: 2px;
+  }
+}
+
+}
+.project-tiles{
   margin: 150px 0px 0px 0px;
   position: relative;
   display: flex;
@@ -285,7 +369,12 @@ a{
 
 }
 
-.portfolio-item{
+@media screen and (max-width: 1200px) {
+  .project-tiles{
+    margin: 50px 0px 0px 0px;
+}
+}
+.project-tile{
   position: relative;
   padding: 20px;
   flex: 25%;
@@ -295,7 +384,7 @@ a{
   background-color: transparent;
 }
 
-.portfolio-item::before{
+.project-tile::before{
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -387,18 +476,18 @@ animation: .5s linear visible;
 
 
 @media screen and (max-width: 1200px) {
-  .portfolio-item{flex: 50%;}
+  .project-tile{flex: 50%;}
 }
 
 @media screen and (max-width: 500px) {
-  .portfolio-item{flex: 100%;}
+  .project-tile{flex: 100%;}
 }
 
-.portfolio-item:hover:before{
+.project-tile:hover:before{
 
 }
 
-.portfolio-item::after{
+.project-tile::after{
   content: "";
   content: "";
   position: absolute;
@@ -410,11 +499,11 @@ animation: .5s linear visible;
   border-radius: 2%;
 }
 
-.portfolio-item:hover:after{
+.project-tile:hover:after{
   transition: .8s;
   border: 2px solid #FFF;
 }
-.portfolio-item-content{
+.project-tile-content{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -423,7 +512,7 @@ animation: .5s linear visible;
   text-align: center;
 }
 
-.portfolio-item-img {
+.project-tile-img {
   min-width: 80px;
   max-width: 130px;
   height: auto;
@@ -431,7 +520,7 @@ animation: .5s linear visible;
   filter: invert(100%) drop-shadow(1px 1px 1px #000) ;
 }
 
-.portfolio-text{
+.project-text{
   font-size: 20px;
   text-decoration: none;
   font-weight: bolder;
@@ -602,7 +691,7 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
 
   z-index: 10;
   color: black;
-
+margin-top: 950px;
 
   font-size: 10px;
   cursor: pointer;
@@ -616,12 +705,11 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
   background-color: rgba(0, 0, 0, 1);
 }
 #open{
-  margin-top: 800px;
+
   display: block;
 }
 
 #close{
-  margin-top: 800px;
   color: white;
   text-shadow: 1px 1px 1px black;
   display: none;
@@ -629,7 +717,7 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
 
 .slidecontainer {
   position: absolute;
-  margin-top: 860px;
+  margin-top: 900px;
   display: none;
   width: 80%;
   z-index: 10;

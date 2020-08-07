@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="index.css"/>
   <title></title>
 </head>
+
 <body>
 
   <header>
@@ -47,9 +48,6 @@
       </div>
 
     </section>
-
-
-
   </section>
 
   <!-- END WELCOME SECTION -->
@@ -57,82 +55,87 @@
   <!-- START PROJECTS SECTION -->
   <section id="projects" class="projects-section">
 
-    <div class="project-items">
+    <div class="arrow">
+      <img src="images/arrow-down.png" alt="">
+      arrow key down
+    </div>
 
-      <div class="portfolio-item" id="algorithms">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+    <div class="project-tiles">
+
+      <div class="project-tile" id="algorithms">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/algorithms-icon.png" alt="">
             Algorithms
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="data-structures">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="data-structures">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/data-structures-icon.png" alt="">
             Data Structures
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="system-design">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="system-design">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/system-design-icon.png" alt="">
             System Design
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="programming-notes">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="programming-notes">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/programming-notes-icon.png" alt="">
             Programming Notes
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="java">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="java">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/java-icon.png" alt="">
             Java
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="python">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="python">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/python-icon.png" alt="">
             Python
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="javascript">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="javascript">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/javascript-icon.png" alt="">
             Javascript
           </div>
         </a>
       </div>
 
-      <div class="portfolio-item" id="web-dev">
-        <a class="portfolio-text" href="#">
-          <div class="portfolio-item-content">
-            <img class="portfolio-item-img"
+      <div class="project-tile" id="web-dev">
+        <a class="project-text" href="#">
+          <div class="project-tile-content">
+            <img class="project-tile-img"
             src="images/web-dev-icon.png" alt="">
             Website Development
           </div>
@@ -151,7 +154,7 @@
     <p id="msg1">Click icons to contact</p>
     <p id="msg2">Click screen to art</p>
     <ul>
-      <li><a href="https://github.com/LiamJCates" target="_blank">
+      <li><a id="profile-link" href="https://github.com/LiamJCates" target="_blank">
         <div id="contact-one">
         </div>
         <img onmouseover="on(document.getElementById('contact-one'))"
@@ -205,6 +208,8 @@
 </body>
 
 <script type="application/javascript"
+src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<script type="application/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js">
 </script>
 <script type="application/javascript"
@@ -214,4 +219,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js">
 <script type="application/javascript" src="welcome.js"></script>
 <script type="application/javascript" src="projects.js"></script>
 <script type="application/javascript" src="contact.js"></script>
+
+<style media="screen">
+  @media screen and (max-width: 700px) {}
+</style>
 </html>
