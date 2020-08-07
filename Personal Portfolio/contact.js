@@ -218,8 +218,7 @@ maxx = window.innerWidth;
 maxy = window.innerHeight;
 
 dimx = maxx - 8; // for a small margin around the canvas
-dimy = maxy - 8; // for a small margin around the canvas
-
+dimy = maxy - 30; // for a small margin around the canvas
 
 
 canv.width = dimx;

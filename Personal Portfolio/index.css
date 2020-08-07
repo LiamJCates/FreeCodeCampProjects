@@ -374,6 +374,7 @@ a{
     margin: 50px 0px 0px 0px;
 }
 }
+
 .project-tile{
   position: relative;
   padding: 20px;
@@ -481,10 +482,6 @@ animation: .5s linear visible;
 
 @media screen and (max-width: 500px) {
   .project-tile{flex: 100%;}
-}
-
-.project-tile:hover:before{
-
 }
 
 .project-tile::after{
@@ -607,11 +604,17 @@ animation: .5s linear visible;
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   #contact>ul {
     flex-direction: column;
   }
 }
+
+
+
+@media screen and (max-width: 800px) {
+}
+
 
 #contact>ul li {
   width: 150px;
@@ -633,9 +636,6 @@ animation: .5s linear visible;
 
 }
 
-@media screen and (max-width: 1000px) {
-  #contact>ul li {margin: 50px 50px;}
-}
 
 #contact-one, #contact-two, #contact-three{
   display: none;
@@ -690,12 +690,13 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
   100% {transform:rotate(360deg);}
 }
 
+
 /* Sliders */
 .settings{
 
   z-index: 10;
   color: black;
-margin-top: 950px;
+margin-top: 900px;
 
   font-size: 10px;
   cursor: pointer;
