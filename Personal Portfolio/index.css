@@ -126,6 +126,9 @@ a{
   position: relative;
   z-index: 3;
   padding: 0 .23em 0 .02em;
+  background: -webkit-linear-gradient(40deg, rgb(28, 216, 210), rgb(237, 66, 100));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .last
@@ -156,13 +159,13 @@ a{
   text-shadow: 0 2px 2px rgba(#000, 0.9);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px), screen and (max-height: 800px)  {
   .first{font-size: 7.5em;}
   .last{font-size: 9em;}
   #messenger { font-size: 24px; }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px), screen and (max-height: 500px)  {
   .first{font-size: 5em;}
   .last{font-size: 6em;}
   #messenger { font-size: 20px; }
