@@ -14,7 +14,7 @@ document.getElementById("projects").addEventListener("mousemove", function(event
     console.log("Y: " + mouseYpercentage);
     document.getElementById("projects-bg").style.background =
     'repeating-radial-gradient(circle at ' +
-    (mouseXpercentage-50) + '%' + (mouseYpercentage-200) + '%, \
+    (mouseXpercentage-75) + '%' + (mouseYpercentage-200) + '%, \
     #fedc00 0, #fedc00 calc(01/35 * 100%),\
     #fcb712 0, #fcb712 calc(02/35 * 100%),\
     #f7921e 0, #f7921e calc(03/35 * 100%),\
@@ -51,7 +51,7 @@ document.getElementById("projects").addEventListener("mousemove", function(event
     #fcb712 0, #fcb712 calc(34/35 * 100%),\
     #fedc00 0, #fedc00 100%),' +
     'repeating-radial-gradient(circle at ' +
-    (mouseXpercentage+50) + '%' + (mouseYpercentage-200) + '%,\
+    (mouseXpercentage+75) + '%' + (mouseYpercentage-200) + '%,\
     #fedc00 0, #fedc00 calc(01/35 * 100%),\
     #fcb712 0, #fcb712 calc(02/35 * 100%),\
     #f7921e 0, #f7921e calc(03/35 * 100%),\

@@ -292,7 +292,7 @@ a{
   width: 100vw;
   height: 100vh;
   background:
-  repeating-radial-gradient(circle at 0% -25%,
+  repeating-radial-gradient(circle at -25% -25%,
     #fedc00 0, #fedc00 calc(01/35 * 100%),
     #fcb712 0, #fcb712 calc(02/35 * 100%),
     #f7921e 0, #f7921e calc(03/35 * 100%),
@@ -328,7 +328,7 @@ a{
     #f7921e 0, #f7921e calc(33/35 * 100%),
     #fcb712 0, #fcb712 calc(34/35 * 100%),
     #fedc00 0, #fedc00 100%),
-  repeating-radial-gradient(circle at 100% -25%,
+  repeating-radial-gradient(circle at 125% -25%,
     #fedc00 0, #fedc00 calc(01/35 * 100%),
     #fcb712 0, #fcb712 calc(02/35 * 100%),
     #f7921e 0, #f7921e calc(03/35 * 100%),
@@ -364,7 +364,7 @@ a{
     #f7921e 0, #f7921e calc(33/35 * 100%),
     #fcb712 0, #fcb712 calc(34/35 * 100%),
     #fedc00 0, #fedc00 100%);
-  background-blend-mode: overlay;
+  background-blend-mode: screen;
   -webkit-animation: hue-rotate 30s linear infinite;
   -moz-animation: hue-rotate 30s linear infinite;
   -o-animation: hue-rotate 30s linear infinite;
@@ -793,18 +793,22 @@ background-image: linear-gradient(0deg,
 
   z-index: 10;
   color: black;
-  margin-top: 54%;
+  margin-top: 55.5%;
 
   font-size: 10px;
   cursor: pointer;
   color: white;
   background-color: rgba(0, 0, 0, .3);
+  opacity: 0.5;
+  border: 1px solid transparent;
 }
 
 .settings:hover{
   color: white;
   text-shadow: 1px 1px 1px black;
   background-color: rgba(0, 0, 0, 1);
+  opacity: 1;
+  border: 1px solid white;
 }
 #open{
 
@@ -842,7 +846,7 @@ background-image: linear-gradient(0deg,
   height: 3px;
   background: #fff;
   outline: none;
-  margin-top: 7px;
+  margin-top: 10px;
   cursor: pointer;
   -webkit-transition: .2s;
   transition: opacity .2s;
