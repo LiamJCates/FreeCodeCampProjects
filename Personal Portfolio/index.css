@@ -1,6 +1,8 @@
 /* Root Settings */
 @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+@import url(https://fonts.googleapis.com/css2?family=Quintessential&display=swap);
+
 
 *,
 *::before,
@@ -307,8 +309,8 @@ a{
 
 .arrow img{
   display: block;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
 
   filter: invert(100%);
 }
@@ -367,25 +369,33 @@ a{
   margin: 150px 0px 0px 0px;
   position: relative;
   display: flex;
-  flex-flow: wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
   width: 96%;
+  min-height: 85%;
 
 }
 
 @media screen and (max-width: 1200px) {
-  .project-tiles{
-    margin: 50px 0px 0px 0px;
-}
+  .project-tiles{ margin: 0px; }
 }
 
 .project-tile{
   position: relative;
-  padding: 20px;
+  padding: 50px 10px;
   flex: 25%;
   flex-grow: 0;
   border: 20px solid transparent;
   border-radius: 2%;
   background-color: transparent;
+}
+
+@media screen and (max-width: 1200px) {
+  .project-tile{flex: 50%;}
+}
+
+@media screen and (max-width: 500px) {
+  .project-tile{flex: 100%;}
 }
 
 .project-tile::before{
@@ -396,68 +406,80 @@ a{
   width: 100%;
   height: 100%;
 
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 2%;
 }
 
+.project-tile::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 2%;
+}
+
+.project-tile:hover:after{
+  transition: .8s;
+  border: 2px solid #FFF;
+}
+
 #algorithms:hover:before{
   background-image: url(images/algorithms-background.jpg);
-  -webkit-animation:  .5s linear visible;
-  -moz-animation:  .5s linear visible;
-  -o-animation:  .5s linear visible;
-  animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #data-structures:hover:before{
   background-image: url(images/data-structures-background.jpg);
-  -webkit-animation:  .5s linear visible;
-  -moz-animation:  .5s linear visible;
-  -o-animation:  .5s linear visible;
-  animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #programming-notes:hover:before{
   background-image: url(images/programming-notes-background.jpg);
-  -webkit-animation:  .5s linear visible;
-  -moz-animation:  .5s linear visible;
-  -o-animation:  .5s linear visible;
-  animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #system-design:hover:before{
   background-image: url(images/system-design-background.jpg);
--webkit-animation:  .5s linear visible;
--moz-animation:  .5s linear visible;
--o-animation:  .5s linear visible;
-animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #java:hover:before{
   background-image: url(images/java-background.jpg);
--webkit-animation:  .5s linear visible;
--moz-animation:  .5s linear visible;
--o-animation:  .5s linear visible;
-animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #python:hover:before{
   background-image: url(images/python-background.jpg);
--webkit-animation:  .5s linear visible;
--moz-animation:  .5s linear visible;
--o-animation:  .5s linear visible;
-animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #javascript:hover:before{
   background-image: url(images/javascript-background3.png);
--webkit-animation:  .5s linear visible;
--moz-animation:  .5s linear visible;
--o-animation:  .5s linear visible;
-animation: .5s linear visible;
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 #web-dev:hover:before{
   background-image: url(images/web-dev-background.png);
--webkit-animation:  .5s linear visible;
--moz-animation:  .5s linear visible;
--o-animation:  .5s linear visible;
-animation: .5s linear visible;
+
 }
 
 
@@ -478,31 +500,6 @@ animation: .5s linear visible;
   100% { opacity: 1; }
 }
 
-
-@media screen and (max-width: 1200px) {
-  .project-tile{flex: 50%;}
-}
-
-@media screen and (max-width: 500px) {
-  .project-tile{flex: 100%;}
-}
-
-.project-tile::after{
-  content: "";
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 2%;
-}
-
-.project-tile:hover:after{
-  transition: .8s;
-  border: 2px solid #FFF;
-}
 .project-tile-content{
   position: relative;
   display: flex;
@@ -514,18 +511,18 @@ animation: .5s linear visible;
 
 .project-tile-img {
   min-width: 80px;
-  max-width: 130px;
+  max-width: 170px;
   height: auto;
-  margin-bottom: 20px;
-  filter: invert(100%) drop-shadow(1px 1px 1px #000) ;
+  margin-bottom: 40px;
+  filter: invert(100%) drop-shadow(3px 3px 3px #000) ;
 }
 
 .project-text{
-  font-size: 20px;
+  font-size: 28px;
   text-decoration: none;
   font-weight: bolder;
   color: white;
-  text-shadow: 2px 2px 2px black, 0px 0px 3px rgba(255, 255, 255, 1);
+  text-shadow: 3px 3px 3px black;
 }
 
 
@@ -536,7 +533,6 @@ animation: .5s linear visible;
   height: 97vh;
   background-color: #222;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -654,7 +650,7 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
 
   -webkit-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
   -moz-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
-  -o-animation: rotate 30s linear infinite, rotate 30s linear infinite,hue-rotate 1s linear infinite;
+  -o-animation: rotate 30s linear infinite,hue-rotate 1s linear infinite;
   animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
 }
 
@@ -699,7 +695,7 @@ background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fc
 
   z-index: 10;
   color: black;
-margin-top: 900px;
+  margin-top: 54%;
 
   font-size: 10px;
   cursor: pointer;
@@ -725,31 +721,31 @@ margin-top: 900px;
 
 .slidecontainer {
   position: absolute;
-  margin-top: 900px;
+  margin-top: 50%;
   display: none;
   width: 80%;
   z-index: 10;
   color: white;
-  font-size: 10px;
+  font-size: 14px;
 
 }
 .slidecontainer p{
   padding-left: 5px;
-  width: 45px;
+  width: 60px;
 }
 
 .slidecontainer span{
-  margin-left: 5px;
+  margin: 0px 5px;
 }
 
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 1px;
+  height: 3px;
   background: #fff;
   outline: none;
   margin-top: 7px;
-
+  cursor: pointer;
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
@@ -759,6 +755,7 @@ margin-top: 900px;
   flex-direction: row;
   background-color: rgba(0, 0, 0, .3);
   opacity: 0.5;
+  border: 1px solid transparent;
 }
 .slider-box:hover{
   background-color: rgba(0, 0, 0, 1);
@@ -770,7 +767,7 @@ margin-top: 900px;
   display: flex;
   flex-direction: row;
 
-  width: 100px;
+  width: 120px;
 }
 
 .slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
