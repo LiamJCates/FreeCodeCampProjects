@@ -160,12 +160,13 @@ var Messenger = function(el) {
 }
 var messenger = new Messenger(document.getElementById("messenger"));
 
-/* Welcome Section Grid */
-// three.js - https://github.com/mrdoob/three.js
+
+
+/*  Welcome Section Interactive Background Grid
+    three.js - https://github.com/mrdoob/three.js
+*/
 'use strict';
-var THREE = THREE || {
-    REVISION: "56"
-};
+var THREE = THREE || {REVISION: "56"};
 
 THREE.extend = function(a, b) {
     if (Object.keys)
@@ -197,7 +198,7 @@ THREE.UnsignedByteType = 1009;
 THREE.ByteType = 1010;
 THREE.RGBAFormat = 1021;
 
-/* Necessary */
+/* Required Dependency */
 THREE.Color = function(a) {
     void 0 !== a && this.set(a);
     return this
@@ -536,7 +537,7 @@ THREE.ColorKeywords = {
     yellowgreen: 10145074
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Quaternion = function(a, b, c, d) {
     this.x = a || 0;
     this.y = b || 0;
@@ -668,7 +669,7 @@ THREE.Quaternion.slerp = function(a, b, c, d) {
     return c.copy(a).slerp(b, d)
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Vector2 = function(a, b) {
     this.x = a || 0;
     this.y = b || 0
@@ -811,7 +812,7 @@ THREE.extend(THREE.Vector2.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Vector3 = function(a, b, c) {
     this.x = a || 0;
     this.y = b || 0;
@@ -1168,7 +1169,7 @@ THREE.extend(THREE.Vector3.prototype, {
     }
 });
 
-/* Necessary*/
+/* Required Dependency */
 THREE.Vector4 = function(a, b, c, d) {
     this.x = a || 0;
     this.y = b || 0;
@@ -1405,7 +1406,7 @@ THREE.extend(THREE.Vector4.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Box2 = function(a, b) {
     this.min = void 0 !== a ? a : new THREE.Vector2(Infinity, Infinity);
     this.max = void 0 !== b ? b : new THREE.Vector2(-Infinity, -Infinity)
@@ -1513,7 +1514,7 @@ THREE.extend(THREE.Box2.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Box3 = function(a, b) {
     this.min = void 0 !== a ? a : new THREE.Vector3(Infinity, Infinity, Infinity);
     this.max = void 0 !== b ? b : new THREE.Vector3(-Infinity, -Infinity, -Infinity)
@@ -1650,7 +1651,7 @@ THREE.extend(THREE.Box3.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Matrix3 = function(a, b, c, d, e, f, g, h, i) {
     this.elements = new Float32Array(9);
     this.set(void 0 !== a ? a : 1, b || 0, c || 0, d || 0, void 0 !== e ? e : 1, f || 0, g || 0, h || 0, void 0 !== i ? i : 1)
@@ -1775,7 +1776,7 @@ THREE.extend(THREE.Matrix3.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Matrix4 = function(a, b, c, d, e, f, g, h, i, k, l, m, n, s, r, p) {
     var q = this.elements = new Float32Array(16);
     q[0] = void 0 !== a ? a : 1;
@@ -2519,7 +2520,7 @@ THREE.extend(THREE.Matrix4.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Frustum = function(a, b, c, d, e, f) {
     this.planes = [void 0 !== a ? a : new THREE.Plane, void 0 !== b ? b : new THREE.Plane, void 0 !== c ? c : new THREE.Plane, void 0 !== d ? d : new THREE.Plane, void 0 !== e ? e : new THREE.Plane, void 0 !== f ? f : new THREE.Plane]
 };
@@ -2594,7 +2595,7 @@ THREE.extend(THREE.Frustum.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Plane = function(a, b) {
     this.normal = void 0 !== a ? a : new THREE.Vector3(1, 0, 0);
     this.constant = void 0 !== b ? b : 0
@@ -2698,7 +2699,7 @@ THREE.extend(THREE.Plane.prototype, {
     }
 });
 
-/* Necessary */
+/* Required Dependency */
 THREE.Math = {
     clamp: function(a, b, c) {
         return a < b ? b : a > c ? c : a
@@ -2751,7 +2752,7 @@ THREE.Math = {
     }()
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.EventDispatcher = function() {
     var a = {};
     this.addEventListener = function(b, c) {
@@ -2769,7 +2770,7 @@ THREE.EventDispatcher = function() {
     }
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Object3D = function() {
     this.id = THREE.Object3DIdCount++;
     this.name = "";
@@ -2904,7 +2905,7 @@ THREE.Object3D.__m1 = new THREE.Matrix4;
 THREE.Object3D.defaultEulerOrder = "XYZ";
 THREE.Object3DIdCount = 0;
 
-/* Necessary*/
+/* Required Dependency */
 THREE.Projector = function() {
     function a() {
         if (f === h) {
@@ -3114,7 +3115,7 @@ THREE.Projector = function() {
     }
 };
 
-/* Necessary*/
+/* Required Dependency */
 THREE.Geometry = function() {
     THREE.EventDispatcher.call(this);
     this.id = THREE.GeometryIdCount++;
@@ -3143,7 +3144,7 @@ THREE.Geometry = function() {
 };
 THREE.GeometryIdCount = 0;
 
-/* Necessary*/
+/* Required Dependency */
 THREE.Camera = function() {
     THREE.Object3D.call(this);
     this.matrixWorldInverse = new THREE.Matrix4;
@@ -3156,7 +3157,7 @@ THREE.Camera.prototype.lookAt = function(a) {
     !0 === this.rotationAutoUpdate && (!1 === this.useQuaternion ? this.rotation.setEulerFromRotationMatrix(this.matrix, this.eulerOrder) : this.quaternion.copy(this.matrix.decompose()[1]))
 };
 
-/* Necessary*/
+/* Required Dependency */
 THREE.PerspectiveCamera = function(a, b, c, d) {
     THREE.Camera.call(this);
     this.fov = void 0 !== a ? a : 50;
@@ -3192,14 +3193,14 @@ THREE.PerspectiveCamera.prototype.updateProjectionMatrix = function() {
     } else this.projectionMatrix.makePerspective(this.fov, this.aspect, this.near, this.far)
 };
 
-/* Necessary*/
+/* Required Dependency */
 THREE.Light = function(a) {
     THREE.Object3D.call(this);
     this.color = new THREE.Color(a)
 };
 THREE.Light.prototype = Object.create(THREE.Object3D.prototype);
 
-/* Necessary */
+/* Required Dependency */
 THREE.Material = function() {
     THREE.EventDispatcher.call(this);
     this.id = THREE.MaterialIdCount++;
@@ -3255,7 +3256,7 @@ THREE.Material.prototype.dispose = function() {
 };
 THREE.MaterialIdCount = 0;
 
-/* Necessary */
+/* Required Dependency */
 THREE.ParticleBasicMaterial = function(a) {
     THREE.Material.call(this);
     this.color = new THREE.Color(16777215);
@@ -3279,7 +3280,7 @@ THREE.ParticleBasicMaterial.prototype.clone = function() {
     return a
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.ParticleCanvasMaterial = function(a) {
     THREE.Material.call(this);
     this.color = new THREE.Color(16777215);
@@ -3295,7 +3296,7 @@ THREE.ParticleCanvasMaterial.prototype.clone = function() {
     return a
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Particle = function(a) {
     THREE.Object3D.call(this);
     this.material = a
@@ -3307,7 +3308,7 @@ THREE.Particle.prototype.clone = function(a) {
     return a
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Line = function(a, b, c) {
     THREE.Object3D.call(this);
     this.geometry = a;
@@ -3326,7 +3327,7 @@ THREE.Line.prototype.clone = function(a) {
     return a
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Mesh = function(a, b) {
     THREE.Object3D.call(this);
     this.geometry = a;
@@ -3357,7 +3358,7 @@ THREE.Mesh.prototype.clone = function(a) {
     return a
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.Scene = function() {
     THREE.Object3D.call(this);
     this.overrideMaterial = this.fog = null;
@@ -3759,7 +3760,7 @@ THREE.CanvasRenderer = function(a) {
     }
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.WebGLRenderTarget = function(a, b, c) {
     THREE.EventDispatcher.call(this);
     this.width = a;
@@ -3841,7 +3842,7 @@ THREE.RenderableLine = function() {
     this.material = null
 };
 
-/* Necessary */
+/* Required Dependency */
 THREE.ExtrudeGeometry = function(a, b) {
     "undefined" !== typeof a && (THREE.Geometry.call(this), a = a instanceof Array ? a : [a], this.shapebb = a[a.length - 1].getBoundingBox(), this.addShapeList(a, b), this.computeCentroids(), this.computeFaceNormals())
 };
