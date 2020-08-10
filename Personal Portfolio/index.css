@@ -284,12 +284,58 @@ a{
   flex-direction: column;
   align-items: center;
 
-  background:
-  repeating-radial-gradient(circle at 0% -25%, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 0,#fcb712 calc(2/18 * 100%),#f7921e 0,#f7921e calc(3/18 * 100%),#e87f24 0,#e87f24 calc(4/18 * 100%),#dd6227 0,#dd6227 calc(5/18 * 100%),#dc4c27 0,#dc4c27 calc(6/18 * 100%),#ca3435 0,#ca3435 calc(7/18 * 100%),#b82841 0,#b82841 calc(8/18 * 100%),#953751 0,#953751 calc(9/18 * 100%),#364c88 0,#364c88 calc(10/18 * 100%),#16599d 0,#16599d calc(11/18 * 100%),#02609e 0,#02609e calc(12/18 * 100%),#0073a9 0,#0073a9 calc(13/18 * 100%),#008aa4 0,#008aa4 calc(14/18 * 100%),#239a87 0,#239a87 calc(15/18 * 100%),#7cba6d 0,#7cba6d calc(16/18 * 100%),#becc2f 0,#becc2f calc(17/18 * 100%),#e0d81d 0,#e0d81d 100%),
-  repeating-radial-gradient(circle at 100% -25%, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 0,#fcb712 calc(2/18 * 100%),#f7921e 0,#f7921e calc(3/18 * 100%),#e87f24 0,#e87f24 calc(4/18 * 100%),#dd6227 0,#dd6227 calc(5/18 * 100%),#dc4c27 0,#dc4c27 calc(6/18 * 100%),#ca3435 0,#ca3435 calc(7/18 * 100%),#b82841 0,#b82841 calc(8/18 * 100%),#953751 0,#953751 calc(9/18 * 100%),#364c88 0,#364c88 calc(10/18 * 100%),#16599d 0,#16599d calc(11/18 * 100%),#02609e 0,#02609e calc(12/18 * 100%),#0073a9 0,#0073a9 calc(13/18 * 100%),#008aa4 0,#008aa4 calc(14/18 * 100%),#239a87 0,#239a87 calc(15/18 * 100%),#7cba6d 0,#7cba6d calc(16/18 * 100%),#becc2f 0,#becc2f calc(17/18 * 100%),#e0d81d 0,#e0d81d 100%);
-  background-blend-mode: overlay;
+
 }
 
+#projects-bg{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background:
+  repeating-radial-gradient(circle at 0% -25%,
+    #fedc00 0, #fedc00 calc(01/18 * 100%),
+    #fcb712 0, #fcb712 calc(02/18 * 100%),
+    #f7921e 0, #f7921e calc(03/18 * 100%),
+    #e87f24 0, #e87f24 calc(04/18 * 100%),
+    #dd6227 0, #dd6227 calc(05/18 * 100%),
+    #dc4c27 0, #dc4c27 calc(06/18 * 100%),
+    #ca3435 0, #ca3435 calc(07/18 * 100%),
+    #b82841 0, #b82841 calc(08/18 * 100%),
+    #953751 0, #953751 calc(09/18 * 100%),
+    #364c88 0, #364c88 calc(10/18 * 100%),
+    #16599d 0, #16599d calc(11/18 * 100%),
+    #02609e 0, #02609e calc(12/18 * 100%),
+    #0073a9 0, #0073a9 calc(13/18 * 100%),
+    #008aa4 0, #008aa4 calc(14/18 * 100%),
+    #239a87 0, #239a87 calc(15/18 * 100%),
+    #7cba6d 0, #7cba6d calc(16/18 * 100%),
+    #becc2f 0, #becc2f calc(17/18 * 100%),
+    #e0d81d 0, #e0d81d 100%),
+  repeating-radial-gradient(circle at 100% -25%,
+    #fedc00 0, #fedc00 calc(1/18 * 100%),
+    #fcb712 0, #fcb712 calc(2/18 * 100%),
+    #f7921e 0, #f7921e calc(3/18 * 100%),
+    #e87f24 0, #e87f24 calc(4/18 * 100%),
+    #dd6227 0, #dd6227 calc(5/18 * 100%),
+    #dc4c27 0, #dc4c27 calc(6/18 * 100%),
+    #ca3435 0, #ca3435 calc(7/18 * 100%),
+    #b82841 0, #b82841 calc(8/18 * 100%),
+    #953751 0, #953751 calc(9/18 * 100%),
+    #364c88 0, #364c88 calc(10/18 * 100%),
+    #16599d 0, #16599d calc(11/18 * 100%),
+    #02609e 0, #02609e calc(12/18 * 100%),
+    #0073a9 0, #0073a9 calc(13/18 * 100%),
+    #008aa4 0, #008aa4 calc(14/18 * 100%),
+    #239a87 0, #239a87 calc(15/18 * 100%),
+    #7cba6d 0, #7cba6d calc(16/18 * 100%),
+    #becc2f 0, #becc2f calc(17/18 * 100%),
+    #e0d81d 0, #e0d81d 100%);
+  background-blend-mode: overlay;
+  -webkit-animation: hue-rotate 30s linear infinite;
+  -moz-animation: hue-rotate 30s linear infinite;
+  -o-animation: hue-rotate 30s linear infinite;
+  animation: hue-rotate 30s linear infinite;
+}
 .arrow{
   display:none;
 }
@@ -646,7 +692,25 @@ a{
   border-radius: 50%;
 
 
-background-image: linear-gradient(0deg, #fedc00 0, #fedc00 calc(1/18 * 100%),#fcb712 calc(2/18 * 100%),#f7921e calc(3/18 *100%),#e87f24 calc(4/18 * 100%),#dd6227 calc(5/18 *100%),#dc4c27 calc(6/18 * 100%),#ca3435 calc(7/18 *100%),#b82841 calc(8/18 * 100%),#953751 calc(9/18 * 100%),#364c88 calc(10/18 * 100%),#16599d calc(11/18 * 100%),#02609e calc(12/18 * 100%),#0073a9 calc(13/18 * 100%),#008aa4 calc(14/18 * 100%),#239a87 calc(15/18 * 100%),#7cba6d calc(16/18 * 100%),#becc2f calc(17/18 * 100%),#e0d81d 100%);
+background-image: linear-gradient(0deg,
+  #fedc00 calc(1/18 * 100%),
+  #fcb712 calc(2/18 * 100%),
+  #f7921e calc(3/18 * 100%),
+  #e87f24 calc(4/18 * 100%),
+  #dd6227 calc(5/18 * 100%),
+  #dc4c27 calc(6/18 * 100%),
+  #ca3435 calc(7/18 * 100%),
+  #b82841 calc(8/18 * 100%),
+  #953751 calc(9/18 * 100%),
+  #364c88 calc(10/18 * 100%),
+  #16599d calc(11/18 * 100%),
+  #02609e calc(12/18 * 100%),
+  #0073a9 calc(13/18 * 100%),
+  #008aa4 calc(14/18 * 100%),
+  #239a87 calc(15/18 * 100%),
+  #7cba6d calc(16/18 * 100%),
+  #becc2f calc(17/18 * 100%),
+  #e0d81d 100%);
 
   -webkit-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
   -moz-animation: rotate 30s linear infinite, hue-rotate 1s linear infinite;
