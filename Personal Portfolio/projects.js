@@ -10,9 +10,7 @@ document.getElementById("projects").addEventListener("mousemove", function(event
     mouseXpercentage = Math.round(event.pageX / windowWidth * 100);
     mouseYpercentage = Math.round(event.pageY / windowHeight * 100);
 
-    console.log("X: " + mouseXpercentage);
-    console.log("Y: " + mouseYpercentage);
-    document.getElementById("projects-bg").style.background =
+    document.getElementById("projects").style.background =
     'repeating-radial-gradient(circle at ' +
     (mouseXpercentage-75) + '%' + (mouseYpercentage-200) + '%, \
     #fedc00 0, #fedc00 calc(01/35 * 100%),\

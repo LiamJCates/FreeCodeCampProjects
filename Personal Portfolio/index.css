@@ -1,8 +1,6 @@
 /* Root Settings */
 @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
-@import url(https://fonts.googleapis.com/css2?family=Quintessential&display=swap);
-
 
 *,
 *::before,
@@ -13,12 +11,9 @@
   scrollbar-color: white black;   /* scroll thumb & track */
   margin: 0;
   padding: 0;
-
-
 }
 
-html,body
-{
+html,body {
   font-family: 'Open Sans',sans-serif;
   line-height: 1.45;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -30,9 +25,7 @@ html,body
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-a{
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 /* Header */
 
@@ -52,9 +45,7 @@ a{
   overflow:hidden;
 }
 
-.block-menu li {
-  display: inline-block;
-}
+.block-menu li { display: inline-block; }
 
 .block-menu li a {
   color: white;
@@ -86,7 +77,6 @@ a{
   text-align: center;
   margin: 0px;
   overflow: hidden;
-  filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
 
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -102,8 +92,7 @@ a{
   100% {background-position: 0% 50%;}
 }
 
-.hero
-{
+.hero {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -111,8 +100,7 @@ a{
   color: white;
 }
 
-.header-wrapper
-{
+.header-wrapper {
   line-height: 1;
   margin-bottom: 1em;
   position: relative;
@@ -120,8 +108,7 @@ a{
   white-space:nowrap;
 }
 
-.first
-{
+.first {
   font-family: 'Lobster',cursive;
   font-size: 11em;
   font-weight: 300;
@@ -133,8 +120,7 @@ a{
   -webkit-text-fill-color: transparent;
 }
 
-.last
-{
+.last {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13em;
   font-weight: 900;
@@ -284,13 +270,6 @@ a{
   flex-direction: column;
   align-items: center;
 
-
-}
-
-#projects-bg{
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
   background:
   repeating-radial-gradient(circle at -25% -25%,
     #fedc00 0, #fedc00 calc(01/35 * 100%),
@@ -365,14 +344,13 @@ a{
     #fcb712 0, #fcb712 calc(34/35 * 100%),
     #fedc00 0, #fedc00 100%);
   background-blend-mode: screen;
+
   -webkit-animation: hue-rotate 30s linear infinite;
-  -moz-animation: hue-rotate 30s linear infinite;
-  -o-animation: hue-rotate 30s linear infinite;
-  animation: hue-rotate 30s linear infinite;
+     -moz-animation: hue-rotate 30s linear infinite;
+       -o-animation: hue-rotate 30s linear infinite;
+          animation: hue-rotate 30s linear infinite;
 }
-.arrow{
-  display:none;
-}
+.arrow{ display:none; }
 
 @media screen and (max-width: 1200px) {
   .arrow{
@@ -385,12 +363,13 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    filter: drop-shadow(3px 3px 3px #000) ;
   }
 
 .arrow img{
   display: block;
-    height: 70px;
-    width: 70px;
+  height: 70px;
+  width: 70px;
 
   filter: invert(100%);
 }
@@ -468,6 +447,10 @@ a{
   border: 20px solid transparent;
   border-radius: 2%;
   background-color: transparent;
+  -webkit-animation: hue-rotate 30s linear infinite reverse;
+     -moz-animation: hue-rotate 30s linear infinite reverse;
+       -o-animation: hue-rotate 30s linear infinite reverse;
+          animation: hue-rotate 30s linear infinite reverse;
 }
 
 @media screen and (max-width: 1200px) {
@@ -509,6 +492,7 @@ a{
 }
 
 #algorithms:hover:before{
+  filter: hue-rotate(0);
   background-image: url(images/algorithms-background.jpg);
   -webkit-animation: .5s linear visible;
      -moz-animation: .5s linear visible;
@@ -594,7 +578,7 @@ a{
   max-width: 170px;
   height: auto;
   margin-bottom: 40px;
-  filter: invert(100%) drop-shadow(3px 3px 3px #000) ;
+  filter: invert(100%) drop-shadow(3px 3px 3px #000);
 }
 
 .project-text{
@@ -793,7 +777,7 @@ background-image: linear-gradient(0deg,
 
   z-index: 10;
   color: black;
-  margin-top: 55.5%;
+  margin-top: 51.5%;
 
   font-size: 10px;
   cursor: pointer;
@@ -823,7 +807,7 @@ background-image: linear-gradient(0deg,
 
 .slidecontainer {
   position: absolute;
-  margin-top: 50%;
+  margin-top: 47%;
   display: none;
   width: 80%;
   z-index: 10;
@@ -901,11 +885,5 @@ footer p{
   color: white;
 }
 
-footer a{
-  text-decoration: none;
-  color: grey;
-}
-
-footer a:hover{
-  color:white;
-}
+footer a{ color: grey; }
+footer a:hover{ color:white; }
