@@ -1,50 +1,33 @@
 /* Screen Naviagtion */
+
+// ------------- VARIABLES ------------- //
 var ancherList = ["welcome-section", "projects", "contact"];
 var currentPosition = null;
-
-window.onload = function() {
-    //adding the event listerner for Mozilla
-    if (window.addEventListener)
-        document.addEventListener('DOMMouseScroll', moveObject, false);
-
-    //for IE/OPERA etc
-    document.onmousewheel = moveObject;
-}
+var ticking = false;
+var isFirefox = (/Firefox/i.test(navigator.userAgent));
+var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
+var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
+var slideDurationSetting = 500; //Amount of time for which slide is "locked"
 
 
+// ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
+function parallaxScroll(event) {
+  if (isFirefox) {
+    //Set delta for Firefox
+    delta = event.detail * (-120);
+  } else if (isIe) {
+    //Set delta for IE
+    delta = -event.deltaY;
+  } else {
+    //Set delta for all other browsers
+    delta = event.wheelDelta;
+  }
 
-function moveObject(event) {
-
-    var delta = 0;
-
-    if (!event) event = window.event;
-
-    // normalize the delta
-    if (event.wheelDelta) {
-        // IE and Opera
-        delta = event.wheelDelta / 60;
-
-    } else if (event.detail) {
-        // W3C
-        delta = -event.detail / 2;
-    }
-
-    if (delta > 0) {
-        //check your current position and target id
-        switch (currentPosition) {
-            case null:
-            case ancherList[0]:
-                currentPosition = ancherList[2];
-                break;
-            case ancherList[1]:
-                currentPosition = ancherList[0];
-                break;
-            case ancherList[2]:
-                currentPosition = ancherList[1];
-                break;
-        }
-    } else {
-        switch (currentPosition) {
+  if (ticking != true) {
+    if (delta <= -scrollSensitivitySetting) {
+      //Down scroll
+      ticking = true;
+      switch (currentPosition) {
             case null:
             case ancherList[0]:
                 currentPosition = ancherList[1];
@@ -56,12 +39,43 @@ function moveObject(event) {
                 currentPosition = ancherList[0];
                 break;
         }
+      slideDurationTimeout(slideDurationSetting);
+    }
+    if (delta >= scrollSensitivitySetting) {
+      //Up scroll
+      ticking = true;
+      switch (currentPosition) {
+            case null:
+            case ancherList[0]:
+                currentPosition = ancherList[2];
+                break;
+            case ancherList[1]:
+                currentPosition = ancherList[0];
+                break;
+            case ancherList[2]:
+                currentPosition = ancherList[1];
+                break;
+        }
+      slideDurationTimeout(slideDurationSetting);
     }
 
-    document.getElementById(currentPosition).scrollIntoView({
+	document.getElementById(currentPosition).scrollIntoView({
         behavior: 'smooth'
     });
+  }
 }
+
+// ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
+function slideDurationTimeout(slideDuration) {
+  setTimeout(function() {
+    ticking = false;
+  }, slideDuration);
+}
+
+// ------------- ADD EVENT LISTENER ------------- //
+var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
 
 function closeNav(){
   document.getElementById('settings').style.display='none';
