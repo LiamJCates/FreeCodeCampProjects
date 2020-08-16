@@ -54,7 +54,6 @@ function sliderUpdate(){
 sliderUpdate();
 
 let canv, ctx;   // canvas and drawing context
-let maxx, maxy;  // size of client Window
 let dimx, dimy;  // size of canvas
 
 let eddies;      // array of eddies
@@ -214,12 +213,8 @@ function startOver() {
 
 // canvas dimensions
 
-maxx = window.innerWidth;
-maxy = window.innerHeight;
-
-dimx = maxx - 8; // for a small margin around the canvas
-dimy = maxy - 30; // for a small margin around the canvas
-
+dimx = document.getElementById("contact").offsetWidth;
+dimy = document.getElementById("contact").offsetHeight;
 
 canv.width = dimx;
 canv.height = dimy;
@@ -242,10 +237,11 @@ requestID = window.requestAnimationFrame(animate);
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 function clickCanvas() {
-startOver();
 window.addEventListener('resize',startOver);
 document.getElementById("msg1").style.display = "none";
 document.getElementById("msg2").style.display = "none";
+document.getElementById("close").style.marginBottom = "0px";
+startOver();
 }
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------

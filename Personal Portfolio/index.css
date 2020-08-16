@@ -132,8 +132,6 @@ a { text-decoration: none; }
   z-index: 0;
 }
 
-
-
 /* Message Text */
 #messenger {
   position: absolute;
@@ -145,24 +143,6 @@ a { text-decoration: none; }
   font-size: 28px;
   white-space: nowrap;
   text-shadow: 0 2px 2px rgba(#000, 0.9);
-}
-
-@media screen and (max-width: 1200px), screen and (max-height: 800px)  {
-  .first{font-size: 7.5em;}
-  .last{font-size: 9em;}
-  #messenger { font-size: 24px; }
-}
-
-@media screen and (max-width: 800px), screen and (max-height: 500px)  {
-  .first{font-size: 5em;}
-  .last{font-size: 6em;}
-  #messenger { font-size: 20px; }
-}
-
-@media screen and (max-width: 400px) {
-  .first{font-size: 3.2em;}
-  .last{font-size: 4em;}
-  #messenger { font-size: 14px; }
 }
 
 /* Mouse scroll indication*/
@@ -260,6 +240,30 @@ a { text-decoration: none; }
   40% { opacity: 0; }
 }
 
+@media screen and (max-width: 1200px), screen and (max-height: 800px)  {
+  .first{font-size: 7.5em;}
+  .last{font-size: 9em;}
+  #messenger { font-size: 24px; }
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 500px)  {
+  .first{font-size: 5em;}
+  .last{font-size: 6em;}
+  #messenger { font-size: 20px; }
+  .mouse{ margin: 20px auto;}
+  .scroll{ font-size:10px;}
+}
+
+@media screen and (max-width: 400px), screen and (max-height: 300px) {
+  .first{font-size: 3.2em;}
+  .last{font-size: 4em;}
+  #messenger { font-size: 14px; }
+}
+
+
+
+
+
 /* Projects */
 #projects{
   width: 100%;
@@ -268,7 +272,7 @@ a { text-decoration: none; }
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 
   background:
   repeating-radial-gradient(circle at -25% -25%,
@@ -429,7 +433,6 @@ a { text-decoration: none; }
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   width: 96%;
   min-height: 85%;
 
@@ -543,7 +546,10 @@ a { text-decoration: none; }
 }
 #web-dev:hover:before{
   background-image: url(images/web-dev-background.png);
-
+  -webkit-animation: .5s linear visible;
+     -moz-animation: .5s linear visible;
+       -o-animation: .5s linear visible;
+          animation: .5s linear visible;
 }
 
 
@@ -594,22 +600,25 @@ a { text-decoration: none; }
 
 #contact{
   width: 100%;
-  height: 97vh;
+  min-height: 97vh;
   background-color: #222;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 #contact>p{
-  position: absolute;
   opacity: 0;
   color: white;
   font-size: 20px;
 }
 
+.msg{
+  position: relative;
+  margin: 0 auto;
+}
 #msg1{
-  margin-bottom: 250px;
+  margin-top: 70px;
   -webkit-animation: 6s ease infinite appearmsg1;
   -moz-animation: 6s ease infinite appearmsg1;
   -o-animation: 6s ease infinite appearmsg1;
@@ -632,7 +641,6 @@ a { text-decoration: none; }
   50% { opacity: 0; }
 }
 #msg2{
-  margin-top: 250px;
   -webkit-animation: 6s ease infinite appearmsg2;
   -moz-animation: 6s ease infinite appearmsg2;
   -o-animation: 6s ease infinite appearmsg2;
@@ -657,7 +665,6 @@ a { text-decoration: none; }
 
 
 #contact>ul {
-  position: absolute;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -667,16 +674,6 @@ a { text-decoration: none; }
 
 }
 
-@media screen and (max-width: 800px) {
-  #contact>ul {
-    flex-direction: column;
-  }
-}
-
-
-
-@media screen and (max-width: 800px) {
-}
 
 
 #contact>ul li {
@@ -696,7 +693,6 @@ a { text-decoration: none; }
   position: absolute;
   width: 150px;
   height: 150px;
-
 }
 
 
@@ -771,13 +767,72 @@ background-image: linear-gradient(0deg,
   100% {transform:rotate(360deg);}
 }
 
+@media screen and (max-width: 1200px), screen and (max-height: 800px)  {
+  #contact>ul>li {
+    margin: 20px 80px;
+      width: 120px;
+      height: 120px;
+  }
+  #contact>ul li img {
+    width: 120px;
+    height: 120px;
+  }
+  #contact-one, #contact-two, #contact-three{
+    width: 119px;
+    height: 119px;
+  }
+  #contact>p{
+    font-size: 16px;
+  }
+  #msg1{margin-top: 50px;}
+}
 
+@media screen and (max-width: 950px), screen and (max-height: 700px)  {
+
+  #contact>ul{flex-direction: column;}
+  #contact>ul>li {
+    margin: 10px 60px;
+      width: 100px;
+      height: 100px;
+  }
+  #contact>ul li img {
+    width: 100px;
+    height: 100px;
+  }
+  #contact-one, #contact-two, #contact-three{
+    width: 99px;
+    height: 99px;
+  }
+}
+
+@media screen and (max-width: 700px), screen and (max-height: 600px) {
+  #contact{
+    min-height: 95vh;
+  }
+  #contact>ul{flex-direction: row;}
+  #contact>ul>li {
+    margin: 20px 50px;
+      width: 75px;
+      height: 75px;
+  }
+  #contact>ul li img {
+    width: 75px;
+    height: 75px;
+  }
+  #contact-one, #contact-two, #contact-three{
+    width: 74px;
+    height: 74px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  #contact>ul{flex-direction: column;}
+}
 /* Sliders */
 .settings{
-
   z-index: 10;
   color: black;
-  margin-top: 51.5%;
+  margin: 0 auto;
 
   font-size: 10px;
   cursor: pointer;
@@ -795,8 +850,8 @@ background-image: linear-gradient(0deg,
   border: 1px solid white;
 }
 #open{
-
   display: block;
+  margin-bottom: 66.9px;
 }
 
 #close{
@@ -806,8 +861,6 @@ background-image: linear-gradient(0deg,
 }
 
 .slidecontainer {
-  position: absolute;
-  margin-top: 47%;
   display: none;
   width: 80%;
   z-index: 10;
@@ -873,6 +926,7 @@ background-image: linear-gradient(0deg,
 footer{
   position: absolute;
   width: 100%;
+  min-height: 30px;
   height: 3vh;
   background-color: black;
 
